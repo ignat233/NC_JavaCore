@@ -9,6 +9,8 @@ public class TestForTask1 {
         System.out.println(toOctal(571));
 
         System.out.println(toHexa(7467));
+
+        System.out.println(reciprocalToHexa(0.136));
     }
     static StringBuilder toOctal(int integer) {
         StringBuilder octal = new StringBuilder("");
@@ -44,6 +46,17 @@ public class TestForTask1 {
 
     }
 
+    static void helperReciprocalToHexa(int in, StringBuilder hexa){
+        if (in < 10)   hexa.append(in);
+        if (in == 10)  hexa.append('A');
+        if (in == 11)  hexa.append('B');
+        if (in == 12)  hexa.append('C');
+        if (in == 13)  hexa.append('D');
+        if (in == 14)  hexa.append('F');
+        if (in == 15)  hexa.append('G');
+
+    }
+
     static StringBuilder toHexa(int integer) {
         StringBuilder hexa = new StringBuilder("");
         while (integer >= 16) {
@@ -55,4 +68,21 @@ public class TestForTask1 {
         return hexa;
     }
 
+    static StringBuilder reciprocalToHexa(double reciprocal ) {
+        StringBuilder hexa = new StringBuilder("");
+        if(reciprocal == 1) {
+            hexa =hexa.append("1");
+        }
+        else{
+            hexa =hexa.append("0.");
+            int i = 0;
+            while(reciprocal > 0 && i < 6){
+                int in =(int)(reciprocal*16.0/1.0);
+                helperReciprocalToHexa(in,hexa);
+                reciprocal = reciprocal*16%1;
+                i++;
+            }
+        }
+        return hexa;
+    }
 }
