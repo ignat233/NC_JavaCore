@@ -32,11 +32,11 @@ public class MyTriangle {
         double e = 0.00001;
         String type = "";
         int count = 0;
-        if( (Math.abs(v1.distance(v2) - v1.distance(v3))) < e)
+        if( (Math.abs((v1.distance(v2) / v1.distance(v3)) - 1))< e)
         count++;
-        if( (Math.abs(v1.distance(v2) - v2.distance(v3))) < e)
+        if( (Math.abs((v1.distance(v2) / v2.distance(v3)) -1)) < e)
         count++;
-        if( (Math.abs(v1.distance(v3) - v2.distance(v3))) < e)
+        if( (Math.abs((v1.distance(v3) / v2.distance(v3)) -1)) < e)
         count++;
             if(count==3)
             type = "Equilateral";
