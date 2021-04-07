@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP.Book;
 
 import java.util.Scanner;
 
@@ -52,15 +52,6 @@ public class Book {
         this.qty = qty;
     }
 
-//    private String getNames() {
-//        String a=" ";
-//        for (int i = 0; i < authors.length; i++) {
-//            Book authors = (Author) new Book();
-//            a+=getName()+getEmail()+getGender();
-//
-//        }
-//        return a;
-//    }
     public String toString(){
 
         String authorList = "";
@@ -72,7 +63,7 @@ public class Book {
         return "Book(name=" + name + ",authors={" + authorList + "},price=" + price + ",qty=" + qty + ")";
     }
 
-    public void setBookManual() {
+    public Book setBookManual() {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите название Книги:");
         this.name = in.nextLine();
@@ -99,8 +90,7 @@ public class Book {
             //         on.close();
         }
         in.close();
-
-
+        return this;
     }
 
 }

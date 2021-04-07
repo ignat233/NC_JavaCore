@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP2.Complex;
 
 public class MyComplex {
 

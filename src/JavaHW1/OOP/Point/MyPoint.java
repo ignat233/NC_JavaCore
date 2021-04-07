@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP.Point;
 
 public class MyPoint {
     private int x = 0;
@@ -45,7 +45,7 @@ public class MyPoint {
         return Math.sqrt(Math.pow((this.x - x),2) + Math.pow((this.y - y),2));
     }
 
-    public double discance(MyPoint another){
+    public double distance(MyPoint another){
         return Math.sqrt(Math.pow((this.x - another.x),2) + Math.pow((this.y - another.y),2));
     }
 

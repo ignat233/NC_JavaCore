@@ -1,4 +1,6 @@
-package com.company;
+package JavaHW1.OOP.Figures;
+
+import JavaHW1.OOP.Point.MyPoint;
 
 public class MyTriangle {
 
@@ -23,18 +25,18 @@ public class MyTriangle {
     }
 
     public double getPerimeter(){
-        return v1.discance(v2) + v1.discance(v3) + v2.discance(v3);
+        return v1.distance(v2) + v1.distance(v3) + v2.distance(v3);
     }
 
     public String getType(){
         double e = 0.00001;
         String type = "";
-        int count =0;
-        if( (Math.abs(v1.discance(v2) / v1.discance(v3)) - 1) < e)
+        int count = 0;
+        if( (Math.abs(v1.distance(v2) - v1.distance(v3))) < e)
         count++;
-        if( (Math.abs(v1.discance(v2) / v2.discance(v3)) - 1) < e)
+        if( (Math.abs(v1.distance(v2) - v2.distance(v3))) < e)
         count++;
-        if( (Math.abs(v1.discance(v3) / v2.discance(v3)) - 1) < e)
+        if( (Math.abs(v1.distance(v3) - v2.distance(v3))) < e)
         count++;
             if(count==3)
             type = "Equilateral";

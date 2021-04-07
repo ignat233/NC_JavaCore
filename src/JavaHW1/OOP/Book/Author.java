@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP.Book;
 
 class Author {
     private String name;

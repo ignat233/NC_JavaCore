@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP2.ContainerOfBall;
 
 public class Container {
 

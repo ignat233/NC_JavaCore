@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP.Employee;
 
 public class Employee {
     private int id;
@@ -42,7 +42,8 @@ public class Employee {
     }
 
     public int raiseSalary(int percent) {
-        return (int) (salary * (1+0.01*percent));
+        salary = (int) (salary * (1+0.01*percent));
+        return salary;
     }
 
     public String toString() {

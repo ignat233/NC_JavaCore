@@ -1,4 +1,4 @@
-package com.company;
+package JavaHW1.OOP.Figures;
 
 public class Circle {
     private double radius = 1.0;
