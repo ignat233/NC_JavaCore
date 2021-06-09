@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 public class MyLinkedList<E> implements ILinkedList<E> {
@@ -168,11 +167,19 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     }
 
     @Override
-    public E[] toArray() {
-        E[] array = (E[]) new Object[size];
+    public <T> T[] toArray(T[] a) {
+        if (a.length < size)
+            a = (T[])java.lang.reflect.Array.newInstance(
+                    a.getClass().getComponentType(), size);
         int i = 0;
-        for (Node<E> x = first; x != null; x = x.nextNode) array[i++] = x.element;
-        return array;
+        Object[] result = a;
+        for (Node<E> x = first; x != null; x = x.nextNode)
+            result[i++] = x.element;
+
+        if (a.length > size)
+            a[size] = null;
+
+        return a;
     }
 
     @Override

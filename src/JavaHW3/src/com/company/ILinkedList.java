@@ -16,7 +16,8 @@ public interface ILinkedList<E> extends Iterable<E>{
 
     int size();
 
-    E[] toArray();
 
     String toString();
+
+    <T> T[] toArray(T[] a);
 }
