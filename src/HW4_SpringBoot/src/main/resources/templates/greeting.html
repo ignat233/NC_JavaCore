@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    <h3>Write to file</h3>
+    <p>_____Id____: <input type="text" th:field="*{id}" /></p>
+    <p>Second Name: <input type="text" th:field="*{secondName} " pattern="[a-zA-Z0-9]+" minlength="2" maxlength="20"/></p>
+    <p>_First Name: <input type="text" th:field="*{firstName}" pattern="[a-zA-Z0-9]+" minlength="2" maxlength="20"/></p>
+    <p>_Patronymic: <input type="text" th:field="*{patronymic}" pattern="[a-zA-Z0-9]+" minlength="4" maxlength="20" /></p>
+    <p>___Years___: <input type="text" th:field="*{years}" /></p>
+    <p>___Salary__: <input type="text" th:field="*{salary}" /></p>
+    <p>___email___: <input type="text" th:field="*{email}" pattern=".+mail\.com"> </p>
+    <p>____Job____: <input type="text" th:field="*{job}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+<form action="#" th:action="@{/greeting/find}" th:object="${greeting}" >
+    <h3>Read file</h3>
+    <p>Second Name : <input type="text" name="secondName" th:field="*{secondName}" /></p>
+    <p>First Name  : <input type="text" name="firstName" th:field="*{firstName}" /></p>
+    <p><input type="submit" value="Get" /></p>
+</form>
+<form action="#" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input id="file" type="file"  name="file" >
+    <input type="submit" value="Получить данные из файла">
+</form>
+<form action="#" th:action="@{/greeting/email}" th:object="${greeting}">
+    <h3>Отправка сообщения на почту</h3>
+    <p>Second Name : <input type="text" name="secondName" th:field="*{secondName}" /></p>
+    <p>First Name  : <input type="text" name="firstName" th:field="*{firstName}" /></p>
+    <p>Massage : <input type="text" name="massage"  /></p>
+    <input type="submit" value="Отправить">
+
+</form>
+</body>
+</html>
